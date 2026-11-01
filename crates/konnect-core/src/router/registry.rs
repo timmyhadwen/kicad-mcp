@@ -103,6 +103,12 @@ pub static ALL_TOOLSETS: &[ToolsetMeta] = &[
         tool_count: 8,
     },
     ToolsetMeta {
+        name: "hfs_checks",
+        description: "Run a board project's own pcbnew Python checks headless: power-path resistance, pour audits, project router",
+        category: "verification",
+        tool_count: 2,
+    },
+    ToolsetMeta {
         name: "config",
         description: "User preferences, project rules, design rules, fab constraints — call load_user_config at session start",
         category: "config",
@@ -146,6 +152,7 @@ pub fn tools_for(name: &str) -> Option<Vec<ToolDef>> {
         "library" => Some(library::tools()),
         "integration" => Some(integration::tools()),
         "verification" => Some(verification::tools()),
+        "hfs_checks" => Some(hfs_checks::tools()),
         "config" => Some(config::tools()),
         "design_review" => Some(design_review::tools()),
         "templates" => Some(templates::tools()),

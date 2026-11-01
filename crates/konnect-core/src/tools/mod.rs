@@ -22,6 +22,7 @@ pub mod schematic_builder;
 pub mod svg_import;
 pub mod templates;
 pub mod verification;
+pub mod hfs_checks;
 
 use crate::mcp::protocol::{CallToolResult, McpToolDescription};
 use crate::router::ToolRouter;
